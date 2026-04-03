@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/haithemdev/flouci-bundle/actions/workflows/tests.yml/badge.svg)](https://github.com/haithemdev/flouci-bundle/actions)
 [![Latest Stable Version](https://img.shields.io/packagist/v/haithemdev/flouci-bundle.svg)](https://packagist.org/packages/haithemdev/flouci-bundle)
-[![License](https://img.shields.io/packagist/l/haithemdev/flouci-bundle.svg)](https://packagist.org/packages/haithemdev/flouci-bundle)
+[![License](https://img.shields.io/github/license/haithemdev/flouci-bundle.svg)](https://github.com/haithemdev/flouci-bundle/blob/main/LICENSE)
 
 A robust Symfony bundle for integrating the **Flouci Payment Gateway API v2**. This bundle is designed for modern Symfony applications, offering support for multiple API accounts (static or dynamic), event-driven architecture, and built-in webhook handling.
 
