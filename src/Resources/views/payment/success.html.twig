@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Successful - Flouci</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            background: #d1fae5;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        .details {
+            text-align: left;
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+        }
+        .details-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .details-row:last-child {
+            border-bottom: none;
+        }
+        .label {
+            font-weight: 600;
+            color: var(--text);
+        }
+        .value {
+            color: var(--text-muted);
+            word-break: break-all;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon-container">✓</div>
+        <h1>Payment Successful!</h1>
+        <p>Your transaction has been verified successfully.</p>
+        
+        <div class="details">
+            <div class="details-row">
+                <span class="label">Status</span>
+                <span class="value" style="color: var(--primary)">{{ result.status }}</span>
+            </div>
+            <div class="details-row">
+                <span class="label">Amount</span>
+                <span class="value">{{ result.amount / 1000 }} TND</span>
+            </div>
+            <div class="details-row">
+                <span class="label">Tracking ID</span>
+                <span class="value">{{ result.developer_tracking_id }}</span>
+            </div>
+            <div class="details-row">
+                <span class="label">Payment Type</span>
+                <span class="value">{{ result.type }}</span>
+            </div>
+            {% if result.details.name is defined %}
+            <div class="details-row">
+                <span class="label">Customer</span>
+                <span class="value">{{ result.details.name }}</span>
+            </div>
+            {% endif %}
+        </div>
+
+        <a href="/payment/test" class="btn">New Test Payment</a>
+    </div>
+</body>
+</html>

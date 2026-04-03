@@ -1,0 +1,10 @@
+/vendor/
+/var/
+/.phpunit.result.cache
+.env.local
+.env.local.php
+.env.tests.local
+.env.dev.local
+.env.prod.local
+phpunit.xml
+composer.lock
